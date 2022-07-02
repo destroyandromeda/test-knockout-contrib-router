@@ -1,0 +1,19 @@
+<h1>${foo} <span data-bind="text: 'rendered at: ' + new Date().getMilliseconds() + 'ms'">TASK</span></h1>
+<span data-bind="text: new Date().getMilliseconds()"></span> These begin with '/', so they route using the current (containing)
+router
+<br>
+<a data-bind="path: '/foo'">/foo</a>
+<a data-bind="path: '/bar'">/bar</a>
+
+<br>
+<br> This begins with './', so it is routed using the child (adjacent) router
+<br>
+<a data-bind="path: './baz'">./baz</a>
+<a data-bind="path: './qux'">./qux</a>
+<br>
+<br> This begins with '//', so it is routed using the root router
+<br>
+<pre data-bind="text: console.dir($data)"></pre>
+<a data-bind="path: '//${foo}/baz'">//${foo}/baz</a>
+<a data-bind="path: '//${foo}/qux'">//${foo}/qux</a>
+<router></router>
